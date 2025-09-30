@@ -190,7 +190,7 @@ if 'active_filters' not in st.session_state:
 
 def authenticate(email):
     """Authenticate user with @ey.com email"""
-    return email.strip().lower().endswith('@ey.com')
+    return email.strip().lower().endswith('@in.ey.com')
 
 def get_excel_files():
     """Get all Excel files in the current directory"""
@@ -236,7 +236,7 @@ if not st.session_state.authenticated:
         
         email = st.text_input(
             "Email Address",
-            placeholder="your.name@ey.com",
+            placeholder="your.name@in.ey.com",
             key="email_input"
         )
         
@@ -249,7 +249,7 @@ if not st.session_state.authenticated:
                 time.sleep(0.3)
                 st.rerun()
             else:
-                st.error("⚠️ Access denied. Please use your @ey.com email address.")
+                st.error("⚠️ Access denied. Please use your @in.ey.com email address.")
         
         st.markdown("</div>", unsafe_allow_html=True)
     
